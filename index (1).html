@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Mad Libs!</title>
+    <link rel="stylesheet" href="styles.css">
+		<script src="makelibs.js"></script>
+		<script src="getlibs.js"></script>
+  </head>
+  <body>
+    <script>
+			let random = 0;
+			function makeLibs(){
+					random = Math.floor(Math.random() * 5) + 1;
+					if (random == 1){
+						makeLibs1();
+					}
+					else if (random == 2){
+						makeLibs2();
+					}
+					else if (random == 3){
+						makeLibs3();
+					}
+					else if (random == 4){
+						makeLibs4();
+					}
+					else if (random == 5){
+						makeLibs5();
+					}
+				else{
+					document.getElementById('storyOutput').textContent = `Press "Start" to begin!`;
+				}
+				
+			}
+			function getLibs(){
+				document.getElementById('madLibsForm').addEventListener('submit', function(event) {
+				event.preventDefault();
+					if (random == 1){
+						getLibs1();
+					}
+					else if (random == 2){
+						getLibs2();
+					}
+					else if (random == 3){
+						getLibs3();
+					}
+					else if (random == 4){
+						getLibs4();
+					}
+					else if (random == 5){
+						getLibs5();
+					}
+				});
+			}
+    </script>
+
+    <h1>Mad Libs</h1>
+		<button onclick="makeLibs()">Start</button>
+    <form id="madLibsForm">
+      <label id = "A" for="a">Click "Start" to begin"</label>
+      <input type="text" id="a" required><br>
+
+      <label id = "B" for="b">Click "Start" to begin"</label>
+      <input type="text" id="b" required><br>
+
+      <label id = "C" for="c">Click "Start" to begin"</label>
+      <input type="text" id="c" required><br>
+
+      <label id = "D" for="d">Click "Start" to begin"</label>
+      <input type="text" id="d" required><br>
+
+      <label id = "E" for="e">Click "Start" to begin"</label>
+      <input type="text" id="e" required><br>
+
+      <label id = "F" for="f">Click "Start" to begin"</label>
+      <input type="text" id="f" required><br>
+
+      <label id = "G" for="g">Click "Start" to begin"</label>
+      <input type="text" id="g" required><br>
+
+      <label id = "H" for="h">Click "Start" to begin"</label>
+      <input type="text" id="h" required><br>
+
+      <label id = "I" for="i">Click "Start" to begin"</label>
+      <input type="text" id="i" required><br>
+
+      <button type="submit" onclick="getLibs()">Generate Story</button>
+    </form>
+
+    <p id="storyOutput"></p>
+  </body>
+</html>
